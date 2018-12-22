@@ -2,10 +2,13 @@
 
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>Hello World 2!</h2>
 
 
 <%
+
+String msg ="";
+
 try
 {
 	Class.forName("com.mysql.jdbc.Driver");
@@ -18,14 +21,16 @@ try
 	}*/
 	
 	st.executeUpdate("insert into employee_data(emp_name) values('raman')");
-	
+	msg ="saved..";	
 }
 	catch (Exception e) {
+		
+		msg = e.toString();
 		// TODO: handle exception
 		System.out.println(e);
 	}
 
 %>
-
+<h1><%=msg %></h1>
 </body>
 </html>
